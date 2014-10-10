@@ -1,0 +1,19 @@
+<html>
+
+<body>
+	Body
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io('http://localhost');
+  
+  var generatedId = Math.floor((Math.random() * 99999) + 1);
+
+	socket.emit('load', { id: generatedId });
+
+  socket.on('valide', function (data) {
+    console.log("NEW MESSAGE",data);
+  });
+  </script>
+</body>
+
+</html>
